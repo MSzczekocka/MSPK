@@ -1,0 +1,8 @@
+#ifndef MSPK_KSIEGOWYINTERFACE_H
+#define MSPK_KSIEGOWYINTERFACE_H
+
+void managerPrzelewMenu();
+
+
+
+#endif //MSPK_KSIEGOWYINTERFACE_H
