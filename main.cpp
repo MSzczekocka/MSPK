@@ -1,8 +1,8 @@
 #include <iostream>
-#include "Pracownik.h"
-#include "PracownikBiurowy.h"
-#include "Przelew.h"
-#include "ManagerPracownikow.h"
+#include "Employee.h"
+#include "OfficeWorker.h"
+#include "Transfer.h"
+#include "EmployeeManager.h"
 #include "ManagerInterface.h"
 
 
@@ -17,15 +17,12 @@ int main(int argc, char** argv) {
 
 
 
-    Pracownik os1 = Pracownik("1", "Adam", "Adamski");
-    std::cout << os1 << std::endl;
 
-    PracownikBiurowy pr1 = PracownikBiurowy( "2", "Aneta", "Anielska");
-    std::cout  << pr1 << std::endl;
-
-    Przelew prz1 = Przelew("2022.04.25", 123.56, paliwo, "1");
-    std::cout  << prz1 << std::endl;
+//    OfficeWorker pr1 = OfficeWorker( "2", "Aneta", "Anielska");
+//    std::cout  << pr1 << std::endl;
 //
+//    Transfer prz1 = Transfer("2022.04.25", 123.56, paliwo, "1");
+//    std::cout  << prz1 << std::endl;
 
 //    system("pause");
     return 0;
