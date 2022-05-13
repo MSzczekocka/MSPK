@@ -1,12 +1,12 @@
 #include "ManagerInterface.h"
-#include "ManagerPracownikow.h"
-#include "ManagerPrzelewow.h"
+#include "EmployeeManager.h"
+#include "TransferManager.h"
 //TODO struct data
 
 std::string pobierzId();
 
 void menuManager(){
-    std::cout << "Opcja ManagePrzelewowr" << std::endl;
+    std::cout << "Opcja Manager" << std::endl;
     std::cout << "1. Menu przelewow" << std::endl;
     std::cout << "2. Menu pracownika" << std::endl;
     std::cout << "0. Koniec" << std::endl;
@@ -78,16 +78,14 @@ void managerPracownikMenu() {
     std::cout << "Pracownicy: " << std::endl;
     std::cout << "1. Dodaj pracownika" << std::endl;
     std::cout << "2. Usun pracownika" << std::endl;
-    std::cout << "2. Edytuj dane pracownika" << std::endl;
-    std::cout << "4. Lista pracownikow" << std::endl;
-    std::cout << "5. Drukuj liste pracownikow" << std::endl;
+    std::cout << "3. Lista pracownikow" << std::endl;
     std::cout << "0. Wroc" << std::endl;
 
     std::string input;
     std::cin >> input;
 
-    while(input != "0" && input != "1" && input != "2" && input !="3" && input != "4" && input != "5") {
-        std::cout << "Podaj liczbe z zakresu od 0 do 5" << std::endl;
+    while(input != "0" && input != "1" && input != "2" && input !="3") {
+        std::cout << "Podaj liczbe z zakresu od 0 do 3" << std::endl;
         std::cin >> input;
     }
 
@@ -97,19 +95,13 @@ void managerPracownikMenu() {
         case 0:
             menuManager();
         case 1:
-            dodajPracownika();
+            addEmployee();
             break;
         case 2:
-            usunPracownika();
+            removeEmployee();
             break;
         case 3:
-            edytujDanePracownika();
-            break;
-        case 4:
-            wyswietlListePracownikow();
-            break;
-        case 5:
-            drukujRaportPracownicy();
+            printAllEmployee();
             break;
     }
     std::cout << '\n';

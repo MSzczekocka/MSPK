@@ -3,4 +3,4 @@ project(MSPK)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(MSPK main.cpp Pracownik.cpp Pracownik.h ManagerPliku.cpp ManagerPliku.h PracownikBiurowy.cpp PracownikBiurowy.h Przelew.cpp Przelew.h ManagerPracownikow.cpp ManagerPracownikow.h ManagerInterface.cpp ManagerInterface.h ManagerPrzelewow.cpp ManagerPrzelewow.h Ksiegowy.cpp Ksiegowy.h KsiegowyInterface.cpp KsiegowyInterface.h)
+add_executable(MSPK main.cpp Employee.cpp Employee.h EmployeeFileManager.cpp EmployeeFileManager.h OfficeWorker.cpp OfficeWorker.h Transfer.cpp Transfer.h EmployeeManager.cpp EmployeeManager.h ManagerInterface.cpp ManagerInterface.h TransferManager.cpp TransferManager.h Accountant.cpp Accountant.h AccountantInterface.cpp AccountantInterface.h)

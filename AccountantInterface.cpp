@@ -1,6 +1,6 @@
 #include <iostream>
-#include "KsiegowyInterface.h"
-#include "ManagerPrzelewow.h"
+#include "AccountantInterface.h"
+#include "TransferManager.h"
 
 void ksiegowyPrzelewMenu() {
     std::cout << "Przelewy: " << std::endl;
