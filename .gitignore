@@ -45,3 +45,10 @@
 /cmake-build-debug/CMakeFiles/MSPK.dir/Przelew.cpp.obj
 /cmake-build-debug/CMakeFiles/TargetDirectories.txt
 /.idea/.gitignore
+/cmake-build-debug/CMakeFiles/MSPK.dir/Accountant.cpp.obj
+/cmake-build-debug/CMakeFiles/MSPK.dir/Employee.cpp.obj
+/cmake-build-debug/Employee.txt
+/cmake-build-debug/CMakeFiles/MSPK.dir/EmployeeFileManager.cpp.obj
+/cmake-build-debug/CMakeFiles/MSPK.dir/EmployeeManager.cpp.obj
+/cmake-build-debug/CMakeFiles/MSPK.dir/OfficeWorker.cpp.obj
+/cmake-build-debug/CMakeFiles/MSPK.dir/Transfer.cpp.obj

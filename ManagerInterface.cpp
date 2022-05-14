@@ -38,14 +38,13 @@ void managerPrzelewMenu() {
     std::cout << "1. Dodaj przelew" << std::endl;
     std::cout << "2. Sprawdz wszystkie przelewy" << std::endl;
     std::cout << "3. Sprawdz przelewy pracownika" << std::endl;
-    std::cout << "4. Drukuj raport" << std::endl;
     std::cout << "0. Wroc" << std::endl;
 
     std::string input;
     std::cin >> input;
 
-    while(input != "0" && input != "1" && input != "2" && input != "3" && input != "4") {
-        std::cout << "Podaj liczbe z zakresu od 0 do 4" << std::endl;
+    while(input != "0" && input != "1" && input != "2" && input != "3") {
+        std::cout << "Podaj liczbe z zakresu od 0 do 3" << std::endl;
         std::cin >> input;
     }
 
@@ -63,9 +62,6 @@ void managerPrzelewMenu() {
             break;
         case 3:
             zobaczPrzelewyPracownika();
-            break;
-        case 4:
-            drukujRaportPrzelewy();
             break;
     }
 
