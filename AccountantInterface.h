@@ -1,7 +1,7 @@
 #ifndef MSPK_ACCOUNTANTINTERFACE_H
 #define MSPK_ACCOUNTANTINTERFACE_H
 
-void managerPrzelewMenu();
+    void accountantStartMemu();
 
 
 

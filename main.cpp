@@ -21,7 +21,7 @@ int main(int argc, char** argv) {
 //    OfficeWorker pr1 = OfficeWorker( "2", "Aneta", "Anielska");
 //    std::cout  << pr1 << std::endl;
 //
-//    Transfer prz1 = Transfer("2022.04.25", 123.56, paliwo, "1");
+//    Transfer prz1 = Transfer("2022.04.25", 123.56, (Category)1, "1");
 //    std::cout  << prz1 << std::endl;
 
 //    system("pause");

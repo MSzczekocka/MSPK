@@ -6,5 +6,7 @@
     void addEmployee();
     void removeEmployee();
     void printAllEmployee();
+    std::string stringUpper(std::string input);
+    bool isUnique(std::string id);
 
 #endif //MSPK_EMPLOYEEMANAGER_H

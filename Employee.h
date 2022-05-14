@@ -2,8 +2,6 @@
 #define MSPK_EMPLOYEE_H
 
 #include <string>
-#include <unordered_map>
-#include <map>
 
 enum Position {
     officeWorker, accountant

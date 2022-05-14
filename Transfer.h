@@ -3,7 +3,7 @@
 
 #include <string>
 enum Category {
-    paliwo = 0, szkolenia = 1, oplaty = 2, zwrot = 3
+    paliwo = 1, szkolenia = 2, oplaty = 3, zwrot = 4
 };
 
 class Transfer {

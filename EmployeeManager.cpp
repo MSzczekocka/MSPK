@@ -1,10 +1,8 @@
 #include <iostream>
-#include <cstring>
-#include <fstream>
 #include "EmployeeManager.h"
 #include "EmployeeFileManager.h"
 #include <bits/stdc++.h>
-
+//TODO List of employees sort by id, name?, surname?, position?
 std::string stringUpper(std::string input) {
     transform(input.begin(), input.end(),input.begin(), ::toupper);
     return input;
