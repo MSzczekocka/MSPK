@@ -4,9 +4,9 @@
 
 #include <string>
 
-void nowyPrzelew();
-void zobaczWszystkiePrzelewy();
-void zobaczPrzelewyPracownika();
+void addNewTransfer();
+void printAllTransfers();
+void printEmployeeTransfers();
 
 
 

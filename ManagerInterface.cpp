@@ -1,7 +1,6 @@
 #include "ManagerInterface.h"
 #include "EmployeeManager.h"
 #include "TransferManager.h"
-//TODO struct data
 
 std::string pobierzId();
 
@@ -25,7 +24,7 @@ void menuManager(){
         case 0:
             exit(0);
         case 1:
-            managerPrzelewMenu();
+            managerTransferMenu();
             break;
         case 2:
             managerPracownikMenu();
@@ -33,7 +32,7 @@ void menuManager(){
     }
 }
 
-void managerPrzelewMenu() {
+void managerTransferMenu() {
     std::cout << "Przelewy: " << std::endl;
     std::cout << "1. Dodaj przelew" << std::endl;
     std::cout << "2. Sprawdz wszystkie przelewy" << std::endl;
@@ -48,25 +47,25 @@ void managerPrzelewMenu() {
         std::cin >> input;
     }
 
-    int wynik = stoi(input);
+    int result = stoi(input);
 
-    switch (wynik) {
+    switch (result) {
         case 0:
             menuManager();
             break;
         case 1:
-            nowyPrzelew();
+            addNewTransfer();
             break;
         case 2:
-            zobaczWszystkiePrzelewy();
+            printAllTransfers();
             break;
         case 3:
-            zobaczPrzelewyPracownika();
+            printEmployeeTransfers();
             break;
     }
 
     std::cout << '\n';
-    managerPrzelewMenu();
+    managerTransferMenu();
 }
 
 
