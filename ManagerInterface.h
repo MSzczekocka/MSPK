@@ -4,7 +4,7 @@
 #include <iostream>
 
 void menuManager();
-void managerPrzelewMenu();
+void managerTransferMenu();
 void managerPracownikMenu();
 
 

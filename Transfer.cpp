@@ -1,36 +1,36 @@
 #include <iostream>
 #include "Transfer.h"
 
-const std::string &Transfer::getData() const {
-    return data;
-}
-void Transfer::setData(const std::string &data) {
-    Transfer::data = data;
-}
-
-float Transfer::getKwota() const {
-    return kwota;
-}
-void Transfer::setKwota(float kwota) {
-    Transfer::kwota = kwota;
-}
-
-Category Transfer::getKategoria() const {
-    return kategoria;
-}
-void Transfer::setKategoria(Category kategoria) {
-    Transfer::kategoria = kategoria;
-}
-
-const std::string &Transfer::getIdPracownika() const {
-    return idPracownika;
-}
-void Transfer::setIdPracownika(const std::string &idPracownika) {
-    Transfer::idPracownika = idPracownika;
-}
-
-std::ostream &operator<<(std::ostream &os, const Transfer &przelew) {
-    os << "| "<< przelew.data << " | " << przelew.kwota << " | " << przelew.kategoria << " | " << przelew.idPracownika << " |" << std::endl;
+std::ostream &operator<<(std::ostream &os, const Transfer &transfer) {
+    os << "| " << transfer.date << " | " << transfer.amount << " | " << transfer.category << " | " << transfer.employeeId << " |" << std::endl;
     return os;
+}
+
+const std::string &Transfer::getDate() const {
+    return date;
+}
+void Transfer::setDate(const std::string &date) {
+    Transfer::date = date;
+}
+
+double Transfer::getAmount() const {
+    return amount;
+}
+void Transfer::setAmount(double amount) {
+    Transfer::amount = amount;
+}
+
+Category Transfer::getCategory() const {
+    return category;
+}
+void Transfer::setCategory(Category category) {
+    Transfer::category = category;
+}
+
+const std::string &Transfer::getEmployeeId() const {
+    return employeeId;
+}
+void Transfer::setEmployeeId(const std::string &employeeId) {
+    Transfer::employeeId = employeeId;
 }
 
