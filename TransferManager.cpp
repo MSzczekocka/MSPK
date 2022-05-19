@@ -3,12 +3,15 @@
 #include "TransferFileManager.h"
 #include "EmployeeManager.h"
 #include <bits/stdc++.h>
+#include "Date.h"
 
 std::string getTransferAmount(){
     std::cout << "Podaj kwote (w zaokrogleniu do złotówek)" << std::endl;
     int zl;
     while (!(std::cin >> zl)) {
         std::cout << "Zly typ zmiennej. Podaj liczbe wieksza od zera: ";
+        std::cin.clear();
+        std::cin.ignore(123, '\n');
         while (zl < 0) {
             std::cout << "Podaj liczbe wieksza od zera" << std::endl;
             std::cin >> zl;
@@ -19,7 +22,9 @@ std::string getTransferAmount(){
     int gr;
     while (!(std::cin >> gr)) {
         std::cout << "Zly typ zmiennej. Podaj liczbe z zakresu od 0 do 99: ";
-        while (gr < 0 || gr > 99) {
+        std::cin.clear();
+        std::cin.ignore(123, '\n');
+        while (gr > 0 && gr < 99) {
             std::cout << "Podaj liczbe z zakresu od 0 do 99" << std::endl;
             std::cin >> gr;
         }
@@ -29,7 +34,10 @@ std::string getTransferAmount(){
 
 std::string getTransferDate(){
     time_t now = time(0);
-    return ctime(&now);
+    std::string result =  ctime(&now);
+    result.erase(std::remove(result.begin(), result.end(), '\n'), result.end());
+    result = Date::getDate(result).toShortString();
+    return result;
 }
 
 int pickCategory(){
