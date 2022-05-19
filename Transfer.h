@@ -29,7 +29,7 @@ public:
     const std::string &getEmployeeId() const;
     void setEmployeeId(const std::string &employeeId);
 
-    friend std::ostream& operator<<(std::ostream& os, const Transfer& przelew);
+    friend std::ostream& operator<<(std::ostream& os, const Transfer& transfer);
 };
 
 
