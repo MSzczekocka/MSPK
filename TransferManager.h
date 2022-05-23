@@ -8,6 +8,4 @@ void addNewTransfer();
 void printAllTransfers();
 void printEmployeeTransfers();
 
-
-
 #endif //MSPK_TRANSFERMANAGER_H

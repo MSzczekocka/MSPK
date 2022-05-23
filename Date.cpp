@@ -4,6 +4,7 @@
 const std::string &Date::getYear() const {
     return year;
 }
+
 void Date::setYear(const std::string &year) {
     Date::year = year;
 }
@@ -11,6 +12,7 @@ void Date::setYear(const std::string &year) {
 const std::string &Date::getMonth() const {
     return month;
 }
+
 void Date::setMonth(const std::string &month) {
     Date::month = month;
 }
@@ -18,6 +20,7 @@ void Date::setMonth(const std::string &month) {
 const std::string &Date::getDay() const {
     return day;
 }
+
 void Date::setDay(const std::string &day) {
     Date::day = day;
 }
@@ -25,6 +28,7 @@ void Date::setDay(const std::string &day) {
 const std::string &Date::getHour() const {
     return hour;
 }
+
 void Date::setHour(const std::string &hour) {
     Date::hour = hour;
 }
@@ -40,7 +44,10 @@ std::ostream &operator<<(std::ostream &os, const Date &date) {
 }
 
 Date Date::getDate(std::string input) {
-    std::string year; std::string month; std::string day; std::string hour;
+    std::string year;
+    std::string month;
+    std::string day;
+    std::string hour;
     int temp = 0;
     int temp2 = 1;
     std::string result;

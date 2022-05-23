@@ -2,15 +2,16 @@
 #include "EmployeeManager.h"
 #include "EmployeeFileManager.h"
 #include <bits/stdc++.h>
+
 //TODO List of employees sort by id, name?, surname?, position?
 std::string stringUpper(std::string input) {
-    transform(input.begin(), input.end(),input.begin(), ::toupper);
+    transform(input.begin(), input.end(), input.begin(), ::toupper);
     return input;
 }
 
 bool isUnique(std::string id) {
     std::vector<Employee> all = getEmployeeListFromFile();
-    for (Employee e : all) {
+    for (Employee e: all) {
         if (e.getId() == id) {
             return false;
         }
@@ -18,15 +19,14 @@ bool isUnique(std::string id) {
     return true;
 }
 
-
 std::string getEmployeeId(std::string name, std::string surname, std::string position) {
     std::vector<Employee> all = getEmployeeListFromFile();
     bool unique = false;
     int index = all.size();
     std::string result;
-    while (!unique){
+    while (!unique) {
         result = "";
-        result = std::to_string(index) + stringUpper(name.substr(0,1)) + stringUpper(surname.substr(0,1));
+        result = std::to_string(index) + stringUpper(name.substr(0, 1)) + stringUpper(surname.substr(0, 1));
         result += position == "officeWorker" ? "1" : "2";
         if (isUnique(result)) {
             unique = true;
@@ -59,7 +59,7 @@ std::string getEmployeePosition() {
     std::string position;
     std::cin >> position;
 
-    while (position != "1" && position != "2"){
+    while (position != "1" && position != "2") {
         std::cout << "Podaj liczbe z zakresu od 1 do 2" << std::endl;
         std::cin >> position;
     }
@@ -67,27 +67,27 @@ std::string getEmployeePosition() {
     return position == "1" ? "officeWorker" : "accountant";
 }
 
-void addEmployee(){
+void addEmployee() {
     std::string name = getEmployeeName();
     std::string surname = getEmployeeSurname();
     std::string position = getEmployeePosition();
-    std::string id = getEmployeeId(name, surname , position);
+    std::string id = getEmployeeId(name, surname, position);
     std::string line = id + " " + name + " " + surname + " " + position;
 
     addEmployeeToFile(line);
 }
 
-void printAllEmployee(){
+void printAllEmployee() {
     std::vector<Employee> all = getEmployeeListFromFile();
-    for (Employee e : all) {
+    for (Employee e: all) {
         std::cout << e << std::endl;
     }
 }
 
 Employee employeeIsPresent(std::string idEmployee) {
     std::vector<Employee> all = getEmployeeListFromFile();
-    Employee result = Employee("0","","","officeWorker");
-    for (Employee e : all) {
+    Employee result = Employee("0", "", "", "officeWorker");
+    for (Employee e: all) {
         if (e.getId() == idEmployee) {
             result = e;
         }
@@ -105,7 +105,7 @@ Employee findEmployee() {
 }
 
 
-void removeEmployee(){
+void removeEmployee() {
     std::vector<Employee> all = getEmployeeListFromFile();
     Employee employeeToRemove = findEmployee();
     if (employeeToRemove.getId() != "0") {

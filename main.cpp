@@ -4,10 +4,12 @@
 #include "Transfer.h"
 #include "EmployeeManager.h"
 #include "ManagerInterface.h"
+#include "StartInterfaceEmployee.h"
 
 
-int main(int argc, char** argv) {
-    menuManager();
+int main(int argc, char **argv) {
+//    menuManager();
+    employeeStartMenu();
 
 
 //    std::cout << "Liczba argumentow: " << argc << std::endl;

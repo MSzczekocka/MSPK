@@ -4,9 +4,11 @@
 #include <string>
 
 enum Position {
-    officeWorker, accountant
+    officeWorker = 1, accountant = 2
 };
+
 Position convertStringToEnumPosition(const std::string input);
+
 std::string convertEnumToStringPosition(const Position input);
 
 class Employee {
@@ -17,8 +19,20 @@ private:
     Position position;
 
 public:
-    Employee(const std::string id, const std::string name, const std::string surname, const std::string position): id(id), name(name), surname(surname), position(convertStringToEnumPosition(position)) {}
-    Employee(const std::string id, const std::string name, const std::string surname, const Position position): id(id), name(name), surname(surname), position(position) {}
+    Employee(const std::string id, const std::string name, const std::string surname, const std::string position) : id(
+            id), name(name), surname(surname), position(convertStringToEnumPosition(position)) {}
+
+    Employee(const std::string id, const std::string name, const std::string surname, const Position position) : id(id),
+                                                                                                                 name(name),
+                                                                                                                 surname(surname),
+                                                                                                                 position(
+                                                                                                                         position) {}
+
+    Employee(const std::string id, const std::string name, const std::string surname, const int position) : id(id),
+                                                                                                            name(name),
+                                                                                                            surname(surname),
+                                                                                                            position(
+                                                                                                                    (Position) position) {}
 
     const std::string &getId() const;
     void setId(const std::string &id);
@@ -32,8 +46,7 @@ public:
     Position getPosition() const;
     void setPosition(Position position);
 
-    friend std::ostream& operator<<(std::ostream& os, const Employee& employee);
-
+    friend std::ostream &operator<<(std::ostream &os, const Employee &employee);
     virtual void addTransfer();
     virtual void printAllYourTransfer();
     virtual std::string to_String();
