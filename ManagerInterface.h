@@ -5,7 +5,7 @@
 
 void menuManager();
 void managerTransferMenu();
-void managerPracownikMenu();
+void managerEmployeeMenu();
 
 
 #endif //MSPK_MANAGERINTERFACE_H

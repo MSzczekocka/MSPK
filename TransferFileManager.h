@@ -5,7 +5,7 @@
 #include <vector>
 #include "Transfer.h"
 
-    std::vector<Transfer> getTransferListFromFile();
-    void addTransferToFile(std::string transfer);
+std::vector<Transfer> getTransferListFromFile();
+void addTransferToFile(std::string transfer);
 
 #endif //MSPK_TRANSFERFILEMANAGER_H

@@ -6,26 +6,30 @@
 
 Transfer convertToTransfer(std::string basicString);
 
-std::vector<Transfer> getTransferListFromFile(){
-        std::fstream file;
-        file.open("Transfers.txt", std::ios::in);
+std::vector<Transfer> getTransferListFromFile() {
+    std::fstream file;
+    file.open("Transfers.txt", std::ios::in);
 
-        if (!file.good()){
-            std::cout << "Plik nie istnieje" << std::endl;
-        }
-
-        std::vector<Transfer> result;
-        std::string line = "";
-
-        while(std::getline(file, line)) {
-            result.push_back(convertToTransfer(line));
-        }
-        file.close();
-        return result;
+    if (!file.good()) {
+        std::cout << "Plik nie istnieje" << std::endl;
     }
 
+    std::vector<Transfer> result;
+    std::string line = "";
+
+    while (std::getline(file, line)) {
+        result.push_back(convertToTransfer(line));
+    }
+    file.close();
+    return result;
+}
+
 Transfer convertToTransfer(std::string input) {
-    std::string date; std::string amount; std::string category; std::string employeeId;
+    std::string date;
+    std::string amount;
+    std::string category;
+    std::string employeeId;
+    std::string hour;
     int temp = 0;
     int temp2 = 1;
     std::string result;
@@ -36,9 +40,12 @@ Transfer convertToTransfer(std::string input) {
                 date = result;
                 break;
             case 2:
-                amount = result;
+                hour = result;
                 break;
             case 3:
+                amount = result;
+                break;
+            case 4:
                 category = result;
                 input.erase(0, temp + 1);
                 employeeId = input;
@@ -49,14 +56,14 @@ Transfer convertToTransfer(std::string input) {
     }
     int intCategory = std::stoi(category);
     double doubleAmount = std::stod(amount);
-    return Transfer(date, doubleAmount, intCategory, employeeId);
+    return Transfer(date, hour, doubleAmount, intCategory, employeeId);
 }
 
-void addTransferToFile(std::string transfer){
+void addTransferToFile(std::string transfer) {
     std::fstream file;
     file.open("Transfers.txt", std::ios::out | std::ios::app);
 
-    if (!file.good()){
+    if (!file.good()) {
         std::cout << "Plik nie istnieje" << std::endl;
     }
 

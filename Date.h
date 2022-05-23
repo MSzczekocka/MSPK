@@ -10,10 +10,13 @@ private:
     std::string day;
     std::string hour;
 public:
-    Date(const std::string year, const std::string month, const std::string day, const std::string hour): year(year), month(month), day(day), hour(hour){}
+    Date(const std::string year, const std::string month, const std::string day, const std::string hour) : year(year),
+                                                                                                           month(month),
+                                                                                                           day(day),
+                                                                                                           hour(hour) {}
 
     std::string toShortString() const;
-    friend std::ostream& operator<<(std::ostream& os, const Date& transfer);
+    friend std::ostream &operator<<(std::ostream &os, const Date &transfer);
     static Date getDate(std::string input);
 
     const std::string &getYear() const;
@@ -27,8 +30,6 @@ public:
 
     const std::string &getHour() const;
     void setHour(const std::string &hour);
-
-
 };
 
 

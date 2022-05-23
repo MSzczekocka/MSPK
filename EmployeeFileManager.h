@@ -11,5 +11,4 @@
     void addEmployeeToFile(std::string employee);
     void createNewEmployeeToFile(std::vector<Employee> employees);
 
-
 #endif //MSPK_EMPLOYEEFILEMANAGER_H
