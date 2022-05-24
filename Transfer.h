@@ -7,6 +7,8 @@ enum Category {
     paliwo = 1, szkolenia = 2, zakwaterowanie = 3, wyżywienie = 4
 };
 
+std::string categoryToString(Category category);
+
 class Transfer {
 private:
     std::string date;

@@ -1,32 +1,25 @@
-#include <iostream>
-#include "Employee.h"
-#include "OfficeWorker.h"
-#include "Transfer.h"
-#include "EmployeeManager.h"
-#include "ManagerInterface.h"
 #include "StartInterfaceEmployee.h"
+#include "ManagerInterface.h"
 
+
+void errorMsg();
 
 int main(int argc, char **argv) {
-//    menuManager();
-    employeeStartMenu();
 
+    if (argc == 2) {
+        if (std::string(argv[1]) == "-e") {
+            employeeStartMenu();
+        } else if (std::string(argv[1]) == "-m")
+            menuManager();
+    }
 
-//    std::cout << "Liczba argumentow: " << argc << std::endl;
-//    std::cout << "Pierwszy argument: " << argv[0] << std::endl;
-//    std::cout << "Drugi argument: " << argv[1] << std::endl;
+    errorMsg();
 
-
-
-
-
-//    OfficeWorker pr1 = OfficeWorker( "2", "Aneta", "Anielska");
-//    std::cout  << pr1 << std::endl;
-//
-//    Transfer prz1 = Transfer("2022.04.25", 123.56, (Category)1, "1");
-//    std::cout  << prz1 << std::endl;
-
-//    system("pause");
     return 0;
+}
+
+void errorMsg() {
+    std::cout << "W celu zalogowania sie jako manager: MSPK.exe -m " << std::endl;
+    std::cout << "W celu zalogowania sie jako pracownik: MSPK.exe -e " << std::endl;
 }
 
