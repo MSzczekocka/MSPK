@@ -1,9 +1,23 @@
 #include <iostream>
 #include "Transfer.h"
 
+std::string categoryToString(Category category) {
+    switch (category) {
+        case 1:
+            return "paliwo";
+        case 2:
+            return "szkolenia";
+        case 3:
+            return "zakwaterowanie";
+        case 4:
+            return "wyzywienie";
+    }
+}
+
 std::ostream &operator<<(std::ostream &os, const Transfer &transfer) {
-    os << "| " << transfer.date << " | " << transfer.hour << " | " << transfer.amount << " | " << transfer.category
-       << " | " << transfer.employeeId << " |" << std::endl;
+    os << "| data: " << transfer.date << " | godzina: " << transfer.hour << " | kwota: " << transfer.amount
+       << " | kategoria: " << categoryToString(transfer.category)
+       << " | id pracownika: " << transfer.employeeId << " |" << std::endl;
     return os;
 }
 

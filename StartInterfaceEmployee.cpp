@@ -4,6 +4,7 @@
 #include "AccountantInterface.h"
 #include "Accountant.h"
 #include "OfficeWorker.h"
+#include "OfficeWorkerInterface.h"
 
 void employeeStartMenu() {
     std::cout << "Podaj swoje id" << std::endl;
@@ -16,10 +17,10 @@ void employeeStartMenu() {
       std::vector<Employee> all = getEmployeeListFromFile();
       for (Employee e : all) {
           if (e.getId() == stringUpper(id)) {
-              if (e.getPosition() == 2) {
+              if (e.getPosition() == accountant) {
                   accountantStartMenu(Accountant(e));
               } else {
-//                  ofStartMenu(OfficeWorker(e));
+                  ofStartMenu(OfficeWorker(e));
               }
           }
       }

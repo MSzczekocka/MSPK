@@ -76,12 +76,13 @@ int pickCategory() {
     return stoi(input);
 }
 
-void addNewTransfer() {
+
+void addNewTransfer(const std::string id) {
     std::string date = getTransferDate();
     std::string amount = getTransferAmount();
     int category = pickCategory();
 
-    std::string request = date + " " + amount + " " + std::to_string(category) + " 1";
+    std::string request = date + " " + amount + " " + std::to_string(category) + " " + id;
     addTransferToFile(request);
 }
 
@@ -103,13 +104,18 @@ void printEmployeeTransfers() {
     std::string employeeId;
     std::cin >> employeeId;
 
-    if (isUnique(stringUpper(employeeId))) {
+    if (isUnique(stringUpper(employeeId)) && employeeId != "1") {
         std::cout << "Brak pracownika w bazie" << std::endl;
     } else {
+        bool isInList = false;
         for (Transfer t: all) {
             if (t.getEmployeeId() == stringUpper(employeeId)) {
+                isInList = true;
                 std::cout << t << std::endl;
             }
+        }
+        if (!isInList) {
+            std::cout << "Brak przelewow" << std::endl;
         }
     }
 }

@@ -1,6 +1,7 @@
 #include <iostream>
 #include "Employee.h"
 #include "TransferFileManager.h"
+#include "TransferManager.h"
 #include <bits/stdc++.h>
 
 Position convertStringToEnumPosition(const std::string input) {
@@ -13,7 +14,7 @@ std::string convertEnumToStringPosition(const Position input) {
 
 
 void Employee::addTransfer() {
-    addTransferToFile(this->to_String());
+    addNewTransfer(id);
 }
 
 std::ostream &operator<<(std::ostream &os, const Employee &employee) {
@@ -24,10 +25,15 @@ std::ostream &operator<<(std::ostream &os, const Employee &employee) {
 
 void Employee::printAllYourTransfer() {
     std::vector<Transfer> all = getTransferListFromFile();
+    bool isInList = false;
     for (Transfer t: all) {
         if (t.getEmployeeId() == id) {
+            isInList = true;
             std::cout << t << std::endl;
         }
+    }
+    if (!isInList) {
+        std::cout << "Brak przelewow" << std::endl;
     }
 }
 

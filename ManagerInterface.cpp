@@ -52,7 +52,7 @@ void managerTransferMenu() {
             menuManager();
             break;
         case 1:
-            addNewTransfer();
+            addNewTransfer("1");
             break;
         case 2:
             printAllTransfers();

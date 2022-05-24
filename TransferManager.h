@@ -4,7 +4,7 @@
 
 #include <string>
 
-void addNewTransfer();
+void addNewTransfer(const std::string id);
 void printAllTransfers();
 void printEmployeeTransfers();
 
