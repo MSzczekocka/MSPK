@@ -43,7 +43,7 @@ std::ostream &operator<<(std::ostream &os, const Date &date) {
     return os;
 }
 
-Date Date::getDate(std::string input) {
+Date Date::getDateFromSystem(std::string input) {
     std::string year;
     std::string month;
     std::string day;

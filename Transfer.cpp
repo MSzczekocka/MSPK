@@ -21,12 +21,19 @@ std::ostream &operator<<(std::ostream &os, const Transfer &transfer) {
     return os;
 }
 
-const std::string &Transfer::getDate() const {
+const std::string &Transfer::getDateFromSystem() const {
     return date;
 }
 
 void Transfer::setDate(const std::string &date) {
     Transfer::date = date;
+}
+
+const std::string &Transfer::getHour() const {
+    return hour;
+}
+void Transfer::setHour(const std::string &hour) {
+    Transfer::hour = hour;
 }
 
 double Transfer::getAmount() const {

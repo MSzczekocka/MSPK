@@ -2,6 +2,7 @@
 #define MSPK_TRANSFER_H
 
 #include <string>
+#include "Date.h"
 
 enum Category {
     paliwo = 1, szkolenia = 2, zakwaterowanie = 3, wyżywienie = 4
@@ -26,7 +27,7 @@ public:
              const std::string employeeId) : date(date), hour(hour), amount(amount), category((Category) category),
                                              employeeId(employeeId) {}
 
-    const std::string &getDate() const;
+    const std::string &getDateFromSystem() const;
     void setDate(const std::string &date);
 
     double getAmount() const;
@@ -39,6 +40,9 @@ public:
 
     void setEmployeeId(const std::string &employeeId);
     friend std::ostream &operator<<(std::ostream &os, const Transfer &transfer);
+
+    const std::string &getHour() const;
+    void setHour(const std::string &hour);
 };
 
 
