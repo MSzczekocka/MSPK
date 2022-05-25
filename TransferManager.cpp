@@ -16,14 +16,14 @@ bool isNumeric(const std::string &str) {
 
 bool isCorrectZl(const std::string &str) {
     if (isNumeric(str)) {
-        return stoi(str) > 0;
+        return stoi(str) >= 0;
     }
     return false;
 }
 
 bool isCorrectGr(const std::string &str) {
     if (isNumeric(str)) {
-        return stoi(str) > 0 && stoi(str) < 99;
+        return stoi(str) >= 0 && stoi(str) < 100;
     }
     return false;
 }
@@ -56,7 +56,7 @@ std::string getTransferDate() {
     time_t now = time(0);
     std::string result = ctime(&now);
     result.erase(std::remove(result.begin(), result.end(), '\n'), result.end());
-    result = Date::getDate(result).toShortString();
+    result = Date::getDateFromSystem(result).toShortString();
     return result;
 }
 

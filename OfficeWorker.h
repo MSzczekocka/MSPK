@@ -13,7 +13,6 @@ public:
             this->setPosition(Position(1));
     }
     void addTransfer() override;
-
     void printAllYourTransfer() override;
 };
 
