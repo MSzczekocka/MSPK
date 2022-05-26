@@ -2,7 +2,6 @@
 #include "StartInterfaceEmployee.h"
 #include "EmployeeFileManager.h"
 #include "AccountantInterface.h"
-#include "Accountant.h"
 #include "OfficeWorker.h"
 #include "OfficeWorkerInterface.h"
 

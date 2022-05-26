@@ -18,7 +18,6 @@ public:
     std::string toShortString() const;
     friend std::ostream &operator<<(std::ostream &os, const Date &transfer);
     static Date getDateFromSystem(std::string input);
-    static Date getDateFromFile(std::string input);
 
     const std::string &getYear() const;
     void setYear(const std::string &year);

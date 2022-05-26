@@ -1,7 +1,6 @@
 #include <fstream>
 #include <iostream>
 #include "TransferFileManager.h"
-#include "Date.h"
 
 
 Transfer convertToTransfer(std::string basicString);
