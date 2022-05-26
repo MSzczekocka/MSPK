@@ -59,7 +59,7 @@ void addEmployeeToFile(std::string employee){
     file.close();
 }
 
-void createNewEmployeeToFile(std::vector<Employee> employees){
+void createNewEmployeeFile(std::vector<Employee> employees){
     std::fstream file;
     file.open("Employee.txt", std::ios::out);
 

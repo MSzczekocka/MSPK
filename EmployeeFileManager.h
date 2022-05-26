@@ -9,6 +9,7 @@
     std::vector<Employee> getEmployeeListFromFile();
     std::string getEmployeeId(std::string basicString, std::string basicString1, std::string basicString2);
     void addEmployeeToFile(std::string employee);
-    void createNewEmployeeToFile(std::vector<Employee> employees);
+    void createNewEmployeeFile(std::vector<Employee> employees);
+    bool hasOnlyLetters(std::string basicString);
 
 #endif //MSPK_EMPLOYEEFILEMANAGER_H

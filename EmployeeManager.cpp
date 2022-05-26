@@ -3,7 +3,21 @@
 #include "EmployeeFileManager.h"
 #include <bits/stdc++.h>
 
-//TODO List of employees sort by id, name?, surname?, position?
+bool hasOnlyLetters(std::string basicString) {
+    for (char c: basicString) {
+        if ((int)c < 65 || (int)c > 122)
+            return false;
+        if ((int)c > 90 && (int)c < 97)
+            return false;
+    }
+    return true;
+}
+
+void convertToName(std::string &input) {
+    transform(input.begin(), input.end(), input.begin(), ::tolower);
+    input[0] = toupper(input[0]);
+}
+
 std::string stringUpper(std::string input) {
     transform(input.begin(), input.end(), input.begin(), ::toupper);
     return input;
@@ -42,6 +56,12 @@ std::string getEmployeeName() {
     std::cout << "Podaj imie pracownika" << std::endl;
     std::string name;
     std::cin >> name;
+
+    while (!hasOnlyLetters(name)) {
+        std::cout << "Imie powinno sie skladac tylko z liter" << std::endl;
+        std::cin >> name;
+    }
+    convertToName(name);
     return name;
 }
 
@@ -49,6 +69,12 @@ std::string getEmployeeSurname() {
     std::cout << "Podaj nazwisko pracownika" << std::endl;
     std::string surname;
     std::cin >> surname;
+
+    while (!hasOnlyLetters(surname)) {
+        std::cout << "Nazwisko powinno sie skladac tylko z liter" << std::endl;
+        std::cin >> surname;
+    }
+    convertToName(surname);
     return surname;
 }
 
@@ -116,7 +142,7 @@ void removeEmployee() {
             }
         }
         all.erase(all.begin() + index);
-        createNewEmployeeToFile(all);
+        createNewEmployeeFile(all);
 
     } else {
         std::cout << "Brak pracownika z podanym id" << std::endl;
